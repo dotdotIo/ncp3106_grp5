@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        display: none;
+      }
+    </style>
+  </head>
+<body>
+  
+    <div class="container" style="display: grid; justify-content:right;padding-right: 10%; align-content: center;">
+      <h1>REGISTRATION</h1>
+      <label for="FN">First Name</label>
+      <input class="form-control" id="FN" aria-describedby="First Name" placeholder="Enter First Name">
+      <br>
+      <label for="LN">Last Name</label>
+      <input class="form-control" id="LN" aria-describedby="Last Name" placeholder="Enter Last Name">
+      <br>
+      <label for="MI">Middle Initial</label>
+      <input class="form-control" id="Mi" aria-describedby="Middle Initial" placeholder="Enter Middle Initial">
+      <br>
+      <label for="SN">Student Number</label>
+      <input type="number" class="form-control" id="SN" aria-describedby="StudenNumber" placeholder="Enter Student Number">
+      <br>
+      <label for="Program">Program: </label>
+      <select name="Program" id="program">
+      <option>Select your program</option>
+      <option value="CE">Civil Engineer</option>
+      <option value="CpE">Computer Engineer</option>
+      <option value="EE">Electrical Engineering</option>
+      <option value="ME">Mechanical Engineering</option>
+      </select><br>
+      <label for="birthday">Birthday:</label>
+      <input type="date" id="birthday" name="birthday"><br><br>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</body>
+</html>
