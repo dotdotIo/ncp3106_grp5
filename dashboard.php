@@ -25,7 +25,7 @@
   <section class="ftco-section">
     <div class="container">
       <div class="container">
-        <a href="login.html">
+        <a href="index.php">
           <span class="glyphicon glyphicon-log-out"></span> Log out
         </a>
     </div>
@@ -37,7 +37,7 @@
       <div class="row justify-content-center">
         <div class="col-md-4">
           <div class="wrap">
-            <div class="img" style="background-image: url(3.jpg);"></div>
+            <div class="img" style="background-image: url(images/3.jpg);"></div>
             <div class="login-wrap p-2 p-md-4 text-center">
               <div class="d-flex">
                 <div class="w-100">
@@ -57,7 +57,7 @@
 
         <div class="col-md-4">
           <div class="wrap">
-            <div class="img" style="background-image: url(4.jpg);"></div>
+            <div class="img" style="background-image: url(images/4.jpg);"></div>
             <div class="login-wrap p-2 p-md-4 text-center">
               <div class="d-flex">
                 <div class="w-100">
@@ -77,7 +77,7 @@
 
         <div class="col-md-4">
           <div class="wrap">
-            <div class="img" style="background-image: url(5.jpg);"></div>
+            <div class="img" style="background-image: url(images/5.jpg);"></div>
             <div class="login-wrap p-2 p-md-4 text-center">
               <div class="d-flex">
                 <div class="w-100">
