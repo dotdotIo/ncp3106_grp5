@@ -45,7 +45,7 @@
                 </div>
               </div>
               <div class="form-group">
-              <a href="registration.html">
+              <a href="Create_Student_Reg.php">
                 <button type="submit" class="form-control btn btn-primary rounded submit px-2">Student Registration</button>
               </a>
               </div>
@@ -65,8 +65,8 @@
                 </div>
               </div>
               <div class="form-group">
-              <a href="add_event.html">
-                <button type="submit" class="form-control btn btn-primary rounded submit px-2">Create Event</button>
+              <a href="Create_Event.php">
+                <button type="submit" class="form-control btn btn-primary rounded submit px-2">Events</button>
               </a>
               </div>
               <div class="form-group d-md-flex">
@@ -81,12 +81,12 @@
             <div class="login-wrap p-2 p-md-4 text-center">
               <div class="d-flex">
                 <div class="w-100">
-                  <h3 class="mb-2">Manage Event</h3>
+                  <h3 class="mb-2">Attendee Registration</h3>
                 </div>
               </div>
               <div class="form-group">
-              <a href="mng_event.html">
-                <button type="submit" class="form-control btn btn-primary rounded submit px-2">Edit Event</button>
+              <a href="Create_Attendee_Reg.php">
+                <button type="submit" class="form-control btn btn-primary rounded submit px-2">Attendees</button>
                </a>
               </div>
               <div class="form-group d-md-flex">
