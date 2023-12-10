@@ -25,7 +25,7 @@
   <section class="ftco-section">
     <div class="container">
       <div class="container">
-        <a href="index.php">
+        <a href="login.php">
           <span class="glyphicon glyphicon-log-out"></span> Log out
         </a>
     </div>

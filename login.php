@@ -10,7 +10,7 @@
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="log-style.css">
 
   <style>
     body, h2, h3, form, input, button, label {
@@ -29,7 +29,7 @@
       <div class="row justify-content-center">
         <div class="col-md-6 col-lg-4">
           <div class="login-wrap p-0">
-            <form action="index.php" class="post">
+            <form action="dashboard.php" class="post">
               <div class="form-group">
                 <input type="text" class="form-control" placeholder="Username" required>
               </div>
