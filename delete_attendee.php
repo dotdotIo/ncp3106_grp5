@@ -32,7 +32,7 @@ require_once "config.php";
 <body class="img js-fullheight" style="background-image: url(images/8.png);">
 <div class="container">
         <div class="container">
-            <p style="    color: white;">.</p>
+            <br>    
             <a href="dashboard.php" class="previous">&laquo; Back</a>
           </a>
       </div>

@@ -1,5 +1,5 @@
 <?php
-require_once "config.php";  
+ $con = mysqli_connect("localhost","root","","event"); 
 ?>
 <?php session_start(); ?>
 <!DOCTYPE html>
@@ -60,12 +60,22 @@ require_once "config.php";
                         <h4>Removal of Student from the Database</h4>
                     </div>
                     <div class="card-body">
-
-                        <form action="delete_student_code.php" method="POST">
-                            <div class="froum-group mb-3">
-                                <label for="">Student Number:</label>
-                                <input type="text" name="delete_Student_Num" class="form-control">
-                            </div>
+                    
+                    <select name="Category"> 
+                       <?php 
+                        $sql = "SELECT * FROM `student_reg`";
+                        $all_categories = mysqli_query($con,$sql);
+                           while ($category = mysqli_fetch_array(
+                        $all_categories,MYSQLI_ASSOC)):; 
+                        ?>
+                 <option value="<?php echo $category["Student_Num"];?>">
+                    <?php echo $category["Student_Num"];?>
+                </option>
+            <?php 
+                endwhile; 
+            ?>
+                 </select>
+                 <form action="delete_student_code.php" method="POST">
                             <div class="froum-group mb-3">
                                 <button type="submit" name="stud_delete_btn" class="btn btn-primary">Delete Data</button>
                                 <a href="Student_Reg_display.php" class="btn btn-secondary ml-2">Cancel</a>

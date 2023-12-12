@@ -32,7 +32,7 @@
 
     <style>
         table{
-            width: 120%;
+            width: 100%;
             margin: auto;
             font-family: Arial, Helvetica, sans-serif;
         }
@@ -46,7 +46,10 @@
             vertical-align: top;
         }
         tr:nth-child(even){
-            background-color: #e7e9eb;
+            background-color: white;
+        }
+        tr:nth-child(odd){
+            background-color: white;
         }
         a {
         text-decoration: none;
@@ -67,7 +70,7 @@
 <body class="img js-fullheight" style="background-image: url(images/8.png);">
 <div class="container">
         <div class="container">
-            <p style="    color: white;">.</p>
+            <br>
             <a href="dashboard.php" class="previous">&laquo; Back</a>
           </a>
       </div>
@@ -78,7 +81,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="mt-5 mb-3 clearfix">
-                        <h2 class="pull-left">Attendees</h2>
+                        <h2 class="pull-left" style= "color: white">Attendees</h2>
                         <a href="Create_Attendee_Reg.php" class="btn btn-success pull-right">
                             <i class="fa fa-plus"></i> Attendee Registraion </a><br> </br>
                         <a href="delete_attendee.php" class="btn btn-success pull-right">
@@ -107,13 +110,14 @@
                             $result = mysqli_query($mysqli, $sql);
                             if(mysqli_num_rows($result) > 0)
                             {
-                                echo '<table> <tr> <th> Event_ID </th> <th> Student_Num </th> <th> Time_In </th> <th> Time Out </th></tr>';
+                                echo '<table> <tr> <th> Event ID </th> <th> Student Number </th> <th> Time In </th> <th> Time Out </th><th> Edit </th></tr>';
                                 while($row = mysqli_fetch_assoc($result)){
                                   // to output mysql data in HTML table format
                                     echo '<tr > <td>' . $row["Event_ID"] . '</td>
                                     <td>' . $row["Student_Num"] . '</td>
                                     <td> ' . $row["Time_In"] . '</td>
-                                    <td>' . $row["Time_Out"] . '</td>  </tr>';
+                                    <td>' . $row["Time_Out"] . '</td> 
+                                    <td><a href="Edit_Attendee.php? Student_Num='.$row['Student_Num']. '" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></td></tr>';
                             }
                             echo '</table>';
                             }

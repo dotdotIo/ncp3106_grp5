@@ -15,7 +15,7 @@
     <style>
                 .wrapper {
             width: 600px;
-            margin: 10px auto;
+            margin-left: 230px;
         
         }
 
@@ -42,7 +42,10 @@
             vertical-align: top;
         }
         tr:nth-child(even){
-            background-color: #e7e9eb;
+            background-color: white;
+        }
+        tr:nth-child(odd){
+            background-color: white;
         }
         a {
         text-decoration: none;
@@ -63,21 +66,21 @@
 <body class="img js-fullheight" style="background-image: url(images/8.png);">
 <div class="container">
         <div class="container">
-            <p style="    color: white;">.</p>
-            <a href="Create_Student_Reg.html" class="previous">&laquo; Back</a>
+            <br>
+            <a href="dashboard.php" class="previous">&laquo; Back</a>
           </a>
       </div>
     </div>
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="mt-5 mb-3 clearfix">
-                        <h2 class="pull-left">Registered Students</h2>
+                <div class="col-md-36">
+                    <div class="mt-3 mb-2 clearfix">
+                        <h2 class="pull-left" style= "color: white;">Registered Students</h2>
                         <a href="Create_Student_Reg.php" class="btn btn-success pull-right">
                             <i class="fa fa-plus"></i> Student Registration</a><br> </br>
                         <a href="delete_student.php" class="btn btn-success pull-right">
-                            <i class="fa fa-minus"></i> Deletion of Student</a>
+                            <i class="fa fa-minus"></i> Deletion of Student</a><br></br>
                     </div>
 
                         <?php
@@ -97,20 +100,24 @@
                         }
 
                             //Output Form Entries from the Database
-                            $sql = "SELECT Student_Num, First_Name, Last_Name, Year_Level FROM student_reg";
+                            $sql = "SELECT Student_Num, Last_Name, First_Name, Middle_Name, Year_Level, Program, Contact_Num,Email_Add FROM student_reg";
                             //fire query    
                             $result = mysqli_query($mysqli, $sql);
                             if(mysqli_num_rows($result) > 0)
                             {
-                            echo '<table> <tr> <th> Student Number </th> <th> First Name </th> <th> Last Name </th> 
-                            <th> Year Level </th> </tr>';
+                            echo '<table> <tr> <th> Student Number </th> <th> Last Name </th> <th> First Name </th>  <th> Middle Name </th> 
+                            <th> Year Level </th> <th> Program </th> <th> Contact Number</th> <th> E-mail </th> <th> Edit </th></tr>';
                             while($row = mysqli_fetch_assoc($result)){
                                 // to output mysql data in HTML table format
                                 echo '<tr > <td>' . $row["Student_Num"] . '</td>
-                                <td>' . $row["First_Name"] . '</td>
-                                <td> ' . $row["Last_Name"] . '</td>
-                                <td>' . $row["Year_Level"] . '</td> 
-                                 </tr>';
+                                <td>' . $row["Last_Name"] . '</td>
+                                <td> ' . $row["First_Name"] . '</td>
+                                <td> ' . $row["Middle_Name"] . '</td>
+                                <td>' . $row["Year_Level"] . '</td>
+                                <td> ' . $row["Program"] . '</td>
+                                <td>' . $row["Contact_Num"] . '</td> 
+                                <td>' . $row["Email_Add"] . '</td> 
+                                <td><a href="Edit_Student.php? Student_Num='.$row['Student_Num']. '" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></td></tr>';
                             }
                             echo '</table>';
                             }

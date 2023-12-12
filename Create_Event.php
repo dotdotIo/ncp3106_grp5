@@ -11,12 +11,12 @@ $Event_ID_err = $Event_Name_err = $Event_Desc_err = $Event_Type_err = $Dates_err
 // Processing form data when form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $input_Event_ID = trim($_POST["Event_ID"]);
-    if (empty($input_Event_ID)) {
-        $Event_ID_err = "Input An Event ID.";
-    } else {
-        $Event_ID = $input_Event_ID;
-    }
+  //  $input_Event_ID = trim($_POST["Event_ID"]);
+ //   if (empty($input_Event_ID)) {
+  //      $Event_ID_err = "Input An Event ID.";
+  //  } else {
+  //      $Event_ID = $input_Event_ID;
+  //  }
 
     $input_Event_Name = trim($_POST["Event_Name"]);
     if (empty($input_Event_Name)) {
@@ -146,7 +146,7 @@ a:hover {
 <body class="img js-fullheight" style="background-image: url(images/8.png);">
 <div class="container">
         <div class="container">
-            <p style="    color: white;">.</p>
+            <br>
             <a href="dashboard.php" class="previous">&laquo; Back</a>
           </a>
       </div>
@@ -156,50 +156,45 @@ a:hover {
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="mt-5">Create Record</h2>
-                    <p>Please fill this form and submit to add student record to the database.</p>
+                    <h2 class="mt-5" style ="color: white">Create Record</h2>
+                    <p style ="color: white">Please fill this form and submit to add student record to the database.</p>
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <div class="form-group">
-                            <label>Event ID</label>
-                            <input type="text" name="Event_ID" class="form-control <?php echo (!empty($Event_ID_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $Event_ID; ?>">
-                            <span class="invalid-feedback"><?php echo $Event_ID_err; ?></span>
-                        </div>
-                        <div class="form-group">
-                            <label>Event_Name</label>
+                            <label style ="color: white">Event Name</label>
                             <input type="text" name="Event_Name" class="form-control <?php echo (!empty($Event_Name_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $Event_Name; ?>">
                             <span class="invalid-feedback"><?php echo $Event_Name_err; ?></span>
                         </div>
                         <div class="form-group">
-                            <label>Event_Desc</label>
+                            <label style ="color: white">Event Description</label>
                             <input type="text" name="Event_Desc" class="form-control <?php echo (!empty($Event_Desc_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $Event_Desc; ?>">
                             <span class="invalid-feedback"><?php echo $Event_Desc_err; ?></span>
                         </div>
                         <div class="form-group">
-                            <label>Event_Type</label>
+                            <label style ="color: white">Event Type</label>
                             <input type="text" name="Event_Type" class="form-control <?php echo (!empty($Event_Type_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $Event_Type; ?>">
                             <span class="invalid-feedback"><?php echo $Event_Type_err; ?></span>
                         </div>
 
                         <div class="form-group">
-                            <label>Date</label>
+                            <label style ="color: white">Date</label>
                             <input type="date" name="Dates" class="form-control <?php echo (!empty($Dates_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $Dates; ?>">
                             <span class="invalid-feedback"><?php echo $Dates_err; ?></span>
                         </div>
 
                         <div class="form-group">
-                            <label>Time_Start</label>
+                            <label style ="color: white">Time Start</label>
                             <input type="time" name="Time_Start" class="form-control <?php echo (!empty($Time_Start_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $Time_Start; ?>">
                             <span class="invalid-feedback"><?php echo $Time_Start_err; ?></span>
                         </div>      
                         
                         <div class="form-group">
-                            <label>Time_End</label>
+                            <label style ="color: white">Time End</label>
                             <input type="time" name="Time_End" class="form-control <?php echo (!empty($Time_End_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $Time_End; ?>">
                             <span class="invalid-feedback"><?php echo $Time_End_err; ?></span>
                         </div>    
                         
                         <div class="form-group">
-                            <label>Registration_Fee</label>
+                            <label style ="color: white">Registration Fee</label>
                             <input type="text" name="Registration_Fee" class="form-control <?php echo (!empty($Registration_Fee_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $Registration_Fee; ?>">
                             <span class="invalid-feedback"><?php echo $Registration_Fee_err; ?></span>
                         </div>  

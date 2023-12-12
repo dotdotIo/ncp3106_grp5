@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <title>Dashboard</title>
+ 
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
@@ -11,6 +13,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
      body, h2, h3, button {
       font-family: 'Poppins', sans-serif;
@@ -19,19 +22,36 @@
         background-color:#28a745; /* Green color */
         border-color: #36a550; /* Green color for the border */
       }
+      a {
+        text-decoration: none;
+        display: inline-block;
+        padding: 8px 16px;
+        }
+
+        a:hover {
+        background-color: #ddd;
+        color: red;
+        }
+
+        .previous {
+        background-color: #f1f1f1;
+        color: black;
+        }
   </style>
 </head>
-<body> 
+<body class="img js-fullheight" style="background-image: url(images/2.gif);"> 
+<div class="container">
+        <div class="container">
+            <br>
+            <a href="login.php" class="glyphicon glyphicon-log-out" style= "color: white;"> LOG OUT</a>
+          </a>
+      </div>
+ 
+
   <section class="ftco-section">
-    <div class="container">
-      <div class="container">
-        <a href="login.php">
-          <span class="glyphicon glyphicon-log-out"></span> Log out
-        </a>
-    </div>
     <div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">Main Menu</h2>
+					<h2 class="heading-section" style= "color: white;">Dashboard</h2>
 				</div>
 			</div>
       <div class="row justify-content-center">

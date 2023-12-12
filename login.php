@@ -48,9 +48,6 @@
                     <span class="checkmark"></span>
                   </label>
                 </div>
-                <div class="w-50 text-md-right">
-                  <a href="#" style="color: #fff">Forgot Password</a>
-                </div>
               </div>
             </form>
           </div>
@@ -68,7 +65,7 @@
              window.location="dashboard.php";
         }
         else{
-            alert("Passwords do not match.");
+            alert("Username and Password do not match.");
         }
       }
   </script>

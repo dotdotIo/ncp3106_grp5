@@ -27,7 +27,7 @@
 </head>
     <style>
         table{
-            width: 120%;
+            width: 100%;
             margin: auto;
             font-family: Arial, Helvetica, sans-serif;
         }
@@ -41,7 +41,10 @@
             vertical-align: top;
         }
         tr:nth-child(even){
-            background-color: #e7e9eb;
+            background-color: white;
+        }
+        tr:nth-child(odd){
+            background-color: white;
         }
         a {
         text-decoration: none;
@@ -62,7 +65,7 @@
 <body class="img js-fullheight" style="background-image: url(images/8.png);">
 <div class="container">
         <div class="container">
-            <p style="    color: white;">.</p>
+            <br>
             <a href="dashboard.php" class="previous">&laquo; Back</a>
           </a>
       </div>
@@ -72,7 +75,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="mt-5 mb-3 clearfix">
-                        <h2 class="pull-left">Events</h2>
+                        <h2 class="pull-left" style ="color: white">Events</h2>
                         <a href="Create_Event.php" class="btn btn-success pull-right">
                             <i class="fa fa-plus"></i> Event Creation </a><br> </br>
                         <a href="delete_event.php" class="btn btn-success pull-right">
@@ -102,7 +105,7 @@
                             if(mysqli_num_rows($result) > 0)
                             {
                                 echo '<table> <tr> <th> Event ID </th> <th> Event Name </th> <th> Date </th> <th> Start </th> <th> Event </th>
-                                <th> Description </th> <th> Fee </th></tr>';
+                                <th> Description </th> <th> Fee </th><th> Edit </th></tr>';
                                while($row = mysqli_fetch_assoc($result)){
                                  // to output mysql data in HTML table format
                                    echo '<tr > <td>' . $row["Event_ID"] . '</td>
@@ -111,7 +114,8 @@
                                    <td>' . $row["Time_Start"] . '</td> 
                                    <td>' . $row["Time_End"] . '</td>
                                    <td>' . $row["Event_Desc"] . '</td>
-                                   <td>' . $row["Registration_Fee"] . '</td> </tr>';
+                                   <td>' . $row["Registration_Fee"] . '</td> 
+                                   <td><a href="Edit_Event.php? Student_Num='.$row['Event_ID']. '" class="mr-1" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></td></tr>';
                             }
                             echo '</table>';
                             }

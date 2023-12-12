@@ -11,7 +11,8 @@ if(isset($_POST['stud_delete_btn']))
     if($query_run)
     {
         $_SESSION['status'] = "Data Deleted Successfully";
-        header("Location: Student_Reg_Display.php");
+        echo "$Student_Num"; 
+        header("Location: Student_reg_display.php");
     }
     else
     {

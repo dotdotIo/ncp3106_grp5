@@ -5,8 +5,8 @@ require_once "config.php";
 // Define variables and initialize with empty values
 
 
-$Event_ID = $Student_Num = $Time_In = $Time_Out = $Payment = "";
-$Event_ID_err = $Student_Num_err = $Time_In_err = $Time_Out_err = $Payment_err = "";
+$Event_ID = $Student_Num = $Time_In = $Time_Out = "";
+$Event_ID_err = $Student_Num_err = $Time_In_err = $Time_Out_err = "";
 
 // Processing form data when form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -39,29 +39,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $Time_Out = $input_Time_Out;
     }
 
-    $input_Payment = trim($_POST["Payment"]);
-    if (empty($input_Payment)) {
-        $Payment_err = "Payment.";
-    } else {
-        $Payment = $input_Payment;
-    }
+
 
     // $Event_ID = $Student_Num = $Time_In = $Time_Out = $Payment
     // Check input errors before inserting in database
-    if (empty($Event_ID_err) && empty($Student_Num_err) && empty($Time_In_err) && empty($Time_Out_err) && empty($Payment_err)) {
+    if (empty($Event_ID_err) && empty($Student_Num_err) && empty($Time_In_err) && empty($Time_Out_err)) {
         // Prepare an insert statement
-        $sql = "INSERT INTO attendee_reg (Event_ID , Student_Num, Time_In , Time_Out , Payment) VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO attendee_reg (Event_ID , Student_Num, Time_In , Time_Out ) VALUES (?, ?, ?, ?)";
 
         if ($stmt = $mysqli->prepare($sql)) {
             // Bind variables to the prepared statement as parameters
-            $stmt->bind_param("sssss", $param_Event_ID , $param_Student_Num, $param_Time_In, $param_Time_Out ,$param_Payment);
+            $stmt->bind_param("ssss", $param_Event_ID , $param_Student_Num, $param_Time_In, $param_Time_Out);
 
             // Set parameters
             $param_Event_ID = $Event_ID ;
             $param_Student_Num = $Student_Num;
             $param_Time_In = $Time_In;
             $param_Time_Out = $Time_Out;
-            $param_Payment = $Payment;
 
             // Attempt to execute the prepared statement
             if ($stmt->execute()) {
@@ -121,7 +115,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body class="img js-fullheight" style="background-image: url(images/8.png);">
 <div class="container">
         <div class="container">
-            <p style="    color: white;">.</p>
+            <br>
             <a href="dashboard.php" class="previous">&laquo; Back</a>
           </a>
       </div>
@@ -130,28 +124,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="mt-5">Create Record</h2>
-                    <p>Please fill this form and submit to add student record to the database.</p>
+                    <h2 class="mt-5" style ="color: white">Create Record</h2>
+                    <p style ="color: white">Please fill this form and submit to add student record to the database.</p>
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <div class="form-group">
-                            <label>Event ID</label>
+                            <label style ="color: white">Event ID</label>
                             <input type="text" name="Event_ID" class="form-control <?php echo (!empty($Event_ID_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $Event_ID; ?>">
                             <span class="invalid-feedback"><?php echo $Event_ID_err; ?></span>
                         </div>
                         <div class="form-group">
-                            <label>Student_Num</label>
+                            <label style ="color: white">Student Number</label>
                             <input type="text" name="Student_Num" class="form-control <?php echo (!empty($Student_Num_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $Student_Num; ?>">
                             <span class="invalid-feedback"><?php echo $Student_Num_err; ?></span>
                         </div>
 
                         <div class="form-group">
-                            <label>Time_In</label>
+                            <label style ="color: white">Time In</label>
                             <input type="time" name="Time_In" class="form-control <?php echo (!empty($Time_In_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $Time_In; ?>">
                             <span class="invalid-feedback"><?php echo $Time_In_err; ?></span>
                         </div>      
                         
                         <div class="form-group">
-                            <label>Time_Out</label>
+                            <label style ="color: white">Time Out</label>
                             <input type="time" name="Time_Out" class="form-control <?php echo (!empty($Time_Out_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $Time_Out; ?>">
                             <span class="invalid-feedback"><?php echo $Time_Out_err; ?></span>
                         </div>    
